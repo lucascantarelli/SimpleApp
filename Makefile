@@ -7,7 +7,7 @@ export git_pre_commit
 
 # Path: .git/hooks/pre-push
 define git_pre_push
-#!/bin/shs
+#!/bin/sh
 make test
 endef
 export git_pre_push
