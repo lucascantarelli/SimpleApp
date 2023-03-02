@@ -1,15 +1,13 @@
 # Path: .git/hooks/pre-commit
 define git_pre_commit
 #!/bin/sh
-cd $(git rev-parse --show-toplevel)
 make format
 endef
 export git_pre_commit
 
 # Path: .git/hooks/pre-push
 define git_pre_push
-#!/bin/sh
-cd $(git rev-parse --show-toplevel)
+#!/bin/shs
 make test
 endef
 export git_pre_push
