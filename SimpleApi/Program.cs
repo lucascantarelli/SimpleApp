@@ -1,28 +1,11 @@
 
-var builder = WebApplication.CreateBuilder(args);
+using SimpleApi.Middlewares;
 
-// Add services to the container.
+// Criando a instância da aplicação
+var app = AppBuilder.GetApp(args);
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Configurando a aplicação
+RequestPipelineBuilder.Configure(app);
 
-SimpleInfra.IoCServices.ConfigureServices(builder.Services);
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
+// Executando a aplicação
 app.Run();

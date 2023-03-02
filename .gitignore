@@ -2,3 +2,9 @@
 .vscode
 */bin
 */obj
+
+# Code Style
+.editorconfig
+
+# Logs format
+*/format-log.json

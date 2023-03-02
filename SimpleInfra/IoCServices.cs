@@ -23,8 +23,8 @@ namespace SimpleInfra
              * Injeção de dependência para o repositório genérico
              */
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped(typeof(IRoleRepository), typeof(RoleRepository));
-            services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+            services.AddTransient(typeof(IRoleRepository), typeof(RoleRepository));
+            services.AddTransient(typeof(IUserRepository), typeof(UserRepository));
 
         }
     }
