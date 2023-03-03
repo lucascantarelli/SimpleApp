@@ -1,6 +1,6 @@
 using SimpleDomain.Repositories;
 
-namespace SimpleDomain.UnitOfWork
+namespace SimpleDomain.Repositories
 {
     public interface IUnitOfWork
     {

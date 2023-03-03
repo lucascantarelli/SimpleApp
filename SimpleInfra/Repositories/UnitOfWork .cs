@@ -1,10 +1,8 @@
 using SimpleDomain.Repositories;
-using SimpleDomain.UnitOfWork;
 
-using SimpleInfra.Repositories;
 using SimpleInfra.Tools;
 
-namespace SimpleInfra.UnitOfWork
+namespace SimpleInfra.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {

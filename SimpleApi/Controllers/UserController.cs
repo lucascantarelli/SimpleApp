@@ -1,13 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 using Microsoft.AspNetCore.Mvc;
 
 using SimpleDomain.Entities;
 using SimpleDomain.Repositories;
-using SimpleDomain.UnitOfWork;
 
 namespace SimpleApi.Controllers
 {
@@ -97,7 +91,7 @@ namespace SimpleApi.Controllers
             userDb.Password = user.Password;
             userDb.UpdatedAt = DateTime.Now;
 
-            _unitOfWork.CommitAsync();
+            await _unitOfWork.CommitAsync();
 
             return NoContent();
         }

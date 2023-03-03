@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -28,6 +23,7 @@ namespace SimpleInfra
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient(typeof(IRoleRepository), typeof(RoleRepository));
             services.AddTransient(typeof(IUserRepository), typeof(UserRepository));
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
         }
     }
