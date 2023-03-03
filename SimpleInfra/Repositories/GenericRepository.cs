@@ -38,7 +38,6 @@ namespace SimpleInfra.Repositories
         public async Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
             await _dbSet.AddAsync(entity, cancellationToken);
-            await _context.SaveChangesAsync(cancellationToken);
             return entity;
         }
 

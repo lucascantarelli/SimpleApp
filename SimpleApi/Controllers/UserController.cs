@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
+
 using SimpleDomain.Entities;
 using SimpleDomain.Repositories;
+using SimpleDomain.UnitOfWork;
 
 namespace SimpleApi.Controllers
 {
@@ -13,11 +16,11 @@ namespace SimpleApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
-        private readonly IUserRepository _db;
-        public UserController(ILogger<UserController> logger, IUserRepository db)
+        private readonly IUnitOfWork _unitOfWork;
+        public UserController(ILogger<UserController> logger, IUnitOfWork unitOfWork)
         {
             _logger = logger;
-            _db = db;
+            _unitOfWork = unitOfWork;
         }
 
         [HttpPost(Name = "CreateUser")]
@@ -33,8 +36,7 @@ namespace SimpleApi.Controllers
                 return BadRequest();
             }
 
-            await _db.AddAsync(user);
-
+            await _unitOfWork.Users.AddAsync(user);
 
             return CreatedAtRoute("GetUser", new { id = user.Id }, user);
         }
@@ -42,7 +44,7 @@ namespace SimpleApi.Controllers
         [HttpGet("{id}", Name = "GetUser")]
         public async Task<IActionResult> Get(int id)
         {
-            var user = await _db.GetAsync(
+            var user = await _unitOfWork.Users.GetAsync(
                 x => x.Id == id && !x.IsDeleted
             );
 
@@ -57,7 +59,9 @@ namespace SimpleApi.Controllers
         [HttpGet(Name = "GetAllUsers")]
         public async Task<IActionResult> Get()
         {
-            var users = await _db.GetAllAsync();
+            var users = await _unitOfWork.Users.GetAllAsync(
+                x => !x.IsDeleted
+            );
             if (users == null)
             {
                 return NotFound();
@@ -79,7 +83,10 @@ namespace SimpleApi.Controllers
                 return BadRequest();
             }
 
-            var userDb = await _db.UpdateAsync(user);
+            var userDb = await _unitOfWork.Users.GetAsync(
+                x => x.Id == user.Id && !x.IsDeleted
+            );
+
             if (userDb == null)
             {
                 return NotFound();
@@ -90,7 +97,7 @@ namespace SimpleApi.Controllers
             userDb.Password = user.Password;
             userDb.UpdatedAt = DateTime.Now;
 
-
+            _unitOfWork.CommitAsync();
 
             return NoContent();
         }
@@ -98,7 +105,7 @@ namespace SimpleApi.Controllers
         [HttpDelete("{id}", Name = "DeleteUser")]
         public async Task<IActionResult> Delete(int id)
         {
-            var user = await _db.GetAsync(
+            var user = await _unitOfWork.Users.GetAsync(
                 x => x.Id == id && !x.IsDeleted
             );
 
@@ -110,7 +117,7 @@ namespace SimpleApi.Controllers
             user.IsDeleted = true;
             user.UpdatedAt = DateTime.Now;
 
-            await _db.UpdateAsync(user);
+            await _unitOfWork.Users.UpdateAsync(user);
 
             return NoContent();
         }
