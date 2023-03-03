@@ -28,5 +28,7 @@ format:
 		fi; \
 	done
 
+	git add .
+
 test:
 	@dotnet test --no-build --verbosity normal
