@@ -23,11 +23,10 @@ format:
 	@echo "Formatting code..."
 	@for dir in ls -d */; do \
 		if [ ! $$dir = "ls" ] && [ ! $$dir = "-d" ]; then \
+			rm -f $$dir"format-log.json"; \
 			dotnet format $$dir --verbosity normal  --verify-no-changes --report $$dir"format-log.json"; \
 		fi; \
 	done
-
-	@echo "Logs criados, verifique se houve alterações."
 
 test:
 	@dotnet test --no-build --verbosity normal
