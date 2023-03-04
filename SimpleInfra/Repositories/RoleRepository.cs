@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using SimpleDomain.Entities;
 using SimpleDomain.Repositories;
-using SimpleInfra.Tools;
+using SimpleInfra.Database;
 
 namespace SimpleInfra.Repositories
 {

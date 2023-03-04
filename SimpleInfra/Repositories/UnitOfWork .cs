@@ -1,6 +1,5 @@
 using SimpleDomain.Repositories;
-
-using SimpleInfra.Tools;
+using SimpleInfra.Database;
 
 namespace SimpleInfra.Repositories
 {
