@@ -18,7 +18,7 @@ namespace SimpleInfra.Repositories
 
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken = default)
         {
-            return await _dbSet.FirstOrDefaultAsync(expression, cancellationToken);
+            return await _dbSet.FirstOrDefaultAsync(expression, cancellationToken) ?? throw new Exception("Entity not found");
         }
 
         public async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken = default)
