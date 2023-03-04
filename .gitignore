@@ -9,3 +9,6 @@
 # Logs format
 */format-log.json
 */AppLogs.log
+
+# Migration
+*/Migrations

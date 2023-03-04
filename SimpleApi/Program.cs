@@ -5,7 +5,7 @@ using SimpleApi.Middlewares;
 var app = AppBuilder.GetApp(args);
 
 // Configurando a aplicação
-RequestPipelineBuilder.Configure(app);
+PipelineBuilder.Configure(app);
 
 // Executando a aplicação
 app.Run();

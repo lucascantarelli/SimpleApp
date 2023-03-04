@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Serilog;
 
 namespace SimpleApi.Middlewares
@@ -23,7 +19,6 @@ namespace SimpleApi.Middlewares
 
             // Controllers
             builder.Services.AddControllers();
-
             // Swagger
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(
@@ -38,8 +33,11 @@ namespace SimpleApi.Middlewares
             (hostingContext, loggerConfiguration) =>
                 loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration));
 
-            // IoC - Infra
-            SimpleInfra.IoCServices.ConfigureServices(builder.Services);
+            // Build Infra
+            SimpleInfra.InfraStartup.Start(
+                services: builder.Services,
+                connectionString: builder.Configuration.GetConnectionString("SqlConnectionString") ?? string.Empty
+            );
 
             // Build
             var app = builder.Build();

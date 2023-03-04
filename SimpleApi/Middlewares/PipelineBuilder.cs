@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SimpleApi.Middlewares
 {
-    public static class RequestPipelineBuilder
+    public static class PipelineBuilder
     {
         public static void Configure(WebApplication app)
         {
