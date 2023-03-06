@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleApi", "SimpleApi\SimpleApi.csproj", "{0FB44396-8714-45FD-A696-B66426E252CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Api", "Simple.Api\Simple.Api.csproj", "{0FB44396-8714-45FD-A696-B66426E252CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInfra", "SimpleInfra\SimpleInfra.csproj", "{ED860EA8-FB93-4239-B358-785E252A0D79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Infra", "Simple.Infra\Simple.Infra.csproj", "{ED860EA8-FB93-4239-B358-785E252A0D79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTests", "SimpleTests\SimpleTests.csproj", "{A2C17C07-EA26-49A3-A5BB-26B6D8EBD201}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Tests", "Simple.Tests\Simple.Tests.csproj", "{A2C17C07-EA26-49A3-A5BB-26B6D8EBD201}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDomain", "SimpleDomain\SimpleDomain.csproj", "{912C1637-2D3B-4D3C-B780-28F7ADCC5FCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Domain", "Simple.Domain\Simple.Domain.csproj", "{912C1637-2D3B-4D3C-B780-28F7ADCC5FCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

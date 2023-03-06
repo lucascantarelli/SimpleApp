@@ -17,12 +17,12 @@
 
 
 ### Simple Infra
-- [ ] Generic Repository
-
-## Simple Database
-docker run --name simpledb -p 5432:5432 -v ./database:/var/lib/postgresql/data -e POSTGRES_PASSWORD=1234 -d postgres
+- [X] Generic Repository
+- [X] Simple UnitOfWork
+- [X] Simple Migrations
+- [X] Simple Sqlite
 
 ### Migrations - Create Inicial Migration
-dotnet ef --startup-project ../SimpleApi/ migrations add InicialMigration --context PostgreSqlDbContext
+dotnet ef --startup-project ../Simple.Api/ migrations add InicialMigration --context SqlServerDbContext
 ### Migrations - Update Database
-dotnet ef --startup-project ../SimpleApi/ database update --context PostgreSqlDbContext
+dotnet ef --startup-project ../Simple.Api/ database update --context SqlServerDbContext
