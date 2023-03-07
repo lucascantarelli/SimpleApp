@@ -11,9 +11,12 @@ namespace Simple.Infra.Extensions
         public static void Configure(this IServiceCollection services, string connectionString)
         {
             // Identity
+            services.AddDbContext<IdentityContext>(options =>
+                options.UseSqlite(connectionString)
+            );
             services.AddIdentity<AppUser, AppRole>()
-                .AddEntityFrameworkStores<IdentityContext>();
-
+                .AddEntityFrameworkStores<IdentityContext>()
+                .AddDefaultTokenProviders();
         }
     }
 }

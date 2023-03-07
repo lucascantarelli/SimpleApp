@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Simple.Domain.Interfaces.Repositories;
+using Simple.Infra.Entities;
 using Simple.Infra.Repositories;
 
 namespace Simple.Infra
@@ -15,7 +17,6 @@ namespace Simple.Infra
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IRoleRepository), typeof(RoleRepository));
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
-
         }
     }
 }

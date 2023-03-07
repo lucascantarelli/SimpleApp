@@ -110,6 +110,50 @@ namespace Simple.Infra.TypeConfigurations
                 .HasColumnName("AccessFailedCount")
                 .IsRequired();
 
+
+            // Populando a tabela.
+            builder.HasData(
+                new AppUser
+                {
+                    Id = Guid.NewGuid(),
+                    FirstName = "John",
+                    LastName = "Doe",
+                    UserName = "john.doe",
+                    PasswordHash = "AQAAAAEAACfafsdhbfdjhfs",
+                    NormalizedUserName = "JOHN.DOE",
+                    Email = "test@local.com",
+                    NormalizedEmail = "TEST@LOCAL.COM",
+                    EmailConfirmed = true,
+                    LockoutEnd = DateTime.Now.AddYears(1),
+                    PhoneNumber = "123456789",
+                    SecurityStamp = "AQAAAAEAACfafsdhbfdjhfs",
+                    ConcurrencyStamp = "AQAAAAEAACfafsdhbfdjhfs",
+                    PhoneNumberConfirmed = true,
+                    TwoFactorEnabled = false,
+                    LockoutEnabled = true,
+                    AccessFailedCount = 1
+                },
+                new AppUser
+                {
+                    Id = Guid.NewGuid(),
+                    FirstName = "Jane",
+                    LastName = "Doe",
+                    UserName = "jane.doe",
+                    PasswordHash = "AQAAAAEAACfafsdhbfdjhfs",
+                    NormalizedUserName = "JANE.DOE",
+                    Email = "test@local.com",
+                    NormalizedEmail = "TEST@LOCAL.COM",
+                    EmailConfirmed = true,
+                    LockoutEnd = DateTime.Now.AddYears(1),
+                    PhoneNumber = "123456789",
+                    SecurityStamp = "AQAAAAEAACfafsdhbfdjhfs",
+                    ConcurrencyStamp = "AQAAAAEAACfafsdhbfdjhfs",
+                    PhoneNumberConfirmed = true,
+                    TwoFactorEnabled = false,
+                    LockoutEnabled = true,
+                    AccessFailedCount = 1
+
+                });
         }
     }
 }

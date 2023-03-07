@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Simple.Infra.TypeConfigurations
 {
-    public class AppRoleClaimTypeConfiguration : IEntityTypeConfiguration<IdentityRoleClaim<string>>
+    public class AppRoleClaimTypeConfiguration : IEntityTypeConfiguration<IdentityRoleClaim<Guid>>
     {
-        public void Configure(EntityTypeBuilder<IdentityRoleClaim<string>> builder)
+        public void Configure(EntityTypeBuilder<IdentityRoleClaim<Guid>> builder)
         {
             builder.ToTable("AppRoleClaims");
         }

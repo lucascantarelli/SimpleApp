@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Simple.Infra.TypeConfigurations
 {
-    public class AppUserClaimTypeConfiguration : IEntityTypeConfiguration<IdentityUserClaim<string>>
+    public class AppUserClaimTypeConfiguration : IEntityTypeConfiguration<IdentityUserClaim<Guid>>
     {
 
-        public void Configure(EntityTypeBuilder<IdentityUserClaim<string>> builder)
+        public void Configure(EntityTypeBuilder<IdentityUserClaim<Guid>> builder)
         {
             builder.ToTable("AppUserClaims");
         }

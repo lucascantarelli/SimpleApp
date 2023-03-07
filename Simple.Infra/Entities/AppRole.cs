@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Simple.Infra.Entities
 {
-    public class AppRole : IdentityRole
+    public class AppRole : IdentityRole<Guid>
     {
         public string Description { get; set; }
     }

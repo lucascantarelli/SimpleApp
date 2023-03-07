@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Simple.Infra.TypeConfigurations
 {
-    public class AppUserTokenTypeConfiguration : IEntityTypeConfiguration<IdentityUserToken<string>>
+    public class AppUserTokenTypeConfiguration : IEntityTypeConfiguration<IdentityUserToken<Guid>>
     {
 
-        public void Configure(EntityTypeBuilder<IdentityUserToken<string>> builder)
+        public void Configure(EntityTypeBuilder<IdentityUserToken<Guid>> builder)
         {
             builder.ToTable("AppUserTokens");
         }
