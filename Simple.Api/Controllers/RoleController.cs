@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 using Simple.Domain.Entities;
-using Simple.Domain.Repositories;
+using Simple.Domain.Interfaces.Repositories;
 
 namespace Simple.Api.Controllers
 {

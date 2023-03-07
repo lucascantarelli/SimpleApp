@@ -1,5 +1,5 @@
 using Simple.Domain.Entities;
-using Simple.Domain.Repositories;
+using Simple.Domain.Interfaces.Repositories;
 using Simple.Infra.Database;
 
 namespace Simple.Infra.Repositories

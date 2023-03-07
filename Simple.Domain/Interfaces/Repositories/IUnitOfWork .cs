@@ -1,6 +1,6 @@
-using Simple.Domain.Repositories;
+using Simple.Domain.Interfaces.Repositories;
 
-namespace Simple.Domain.Repositories
+namespace Simple.Domain.Interfaces.Repositories
 {
     public interface IUnitOfWork
     {

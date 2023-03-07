@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Simple.Infra.TypeConfiguratiions;
+using Simple.Infra.TypeConfigurations;
 
 namespace Simple.Infra.Database
 {

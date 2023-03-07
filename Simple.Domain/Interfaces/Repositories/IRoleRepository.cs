@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Simple.Domain.Entities;
 
-namespace Simple.Domain.Repositories
+namespace Simple.Domain.Interfaces.Repositories
 {
-    public interface IUserRepository : IGenericRepository<User>
+    public interface IRoleRepository : IGenericRepository<Role>
     {
 
     }

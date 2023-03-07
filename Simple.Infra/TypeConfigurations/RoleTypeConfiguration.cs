@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Simple.Domain.Entities;
 
-namespace Simple.Infra.TypeConfiguratiions
+namespace Simple.Infra.TypeConfigurations
 {
     public class RoleTypeConfiguration : IEntityTypeConfiguration<Role>
     {

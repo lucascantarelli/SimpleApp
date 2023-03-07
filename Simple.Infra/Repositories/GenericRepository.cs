@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using Simple.Domain.Repositories;
+using Simple.Domain.Interfaces.Repositories;
 using Simple.Infra.Database;
 
 namespace Simple.Infra.Repositories

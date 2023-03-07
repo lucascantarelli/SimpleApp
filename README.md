@@ -23,6 +23,6 @@
 - [X] Simple Sqlite
 
 ### Migrations - Create Inicial Migration
-dotnet ef --startup-project ../Simple.Api/ migrations add InicialMigration --context SqlServerDbContext
+dotnet ef --startup-project ../Simple.Api/ migrations add InicialMigration --context IdentityContext
 ### Migrations - Update Database
-dotnet ef --startup-project ../Simple.Api/ database update --context SqlServerDbContext
+dotnet ef --startup-project ../Simple.Api/ database update --context IdentityContext

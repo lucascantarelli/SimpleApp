@@ -1,5 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
-using Simple.Domain.Repositories;
+using Simple.Domain.Interfaces.Repositories;
 using Simple.Infra.Repositories;
 
 namespace Simple.Infra
