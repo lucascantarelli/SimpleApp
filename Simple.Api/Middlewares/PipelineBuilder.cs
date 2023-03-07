@@ -25,6 +25,7 @@ namespace Simple.Api.Middlewares
             // Security
             app.UseHttpsRedirection();
             app.UseAuthorization();
+            app.UseAuthorization();
 
             // Controllers
             app.UseRouting();
